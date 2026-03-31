@@ -7,8 +7,8 @@
 - [x] Create develop branch from main
 - [x] Set branch protection on main: require PR, require status checks to pass (placeholder for now), no direct push
 - [x] Create .gitignore — include __pycache__, *.pyc, .env, node_modules, dist, .venv
-- [ ] Create empty README.md with project title and one-line description
-- [ ] Commit: chore: initial repo setup
+- [x] Create empty README.md with project title and one-line description
+- [x] Commit: chore: initial repo setup
 - [ ] Invite me as a collaborator on your project. My email is gjoko.pargo@dogon.biz
 
 ## Folder scaffold
