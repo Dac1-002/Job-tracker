@@ -9,40 +9,40 @@
 - [x] Create .gitignore — include __pycache__, *.pyc, .env, node_modules, dist, .venv
 - [x] Create empty README.md with project title and one-line description
 - [x] Commit: chore: initial repo setup
-- [ ] Invite me as a collaborator on your project. My email is gjoko.pargo@dogon.biz
+- [x] Invite me as a collaborator on your project. My email is gjoko.pargo@dogon.biz
 
 ## Folder scaffold
 
-- [ ] Create top-level folders: backend/, frontend/, infra/, docs/, .github/workflows/
-- [ ] Add a .gitkeep file inside each empty folder so Git tracks them
-- [ ] Commit: chore: scaffold monorepo folder structure
+- [x] Create top-level folders: backend/, frontend/, infra/, docs/, .github/workflows/
+- [x] Add a .gitkeep file inside each empty folder so Git tracks them
+- [x] Commit: chore: scaffold monorepo folder structure
 
 ## Architecture documentation
 
-- [ ] Create docs/architecture.md
+- [x] Create docs/architecture.md
 - [ ] Write in plain English (no diagrams yet): what each component is, what it does, how they connect
-- [ ] Browser / React SPA
-- [ ] Azure Static Web Apps
-- [ ] Azure App Service (FastAPI)
-- [ ] Azure Container Registry
-- [ ] Azure Database for PostgreSQL
-- [ ] Azure Blob Storage
+-  Browser / React SPA
+-  Azure Static Web Apps
+-  Azure App Service (FastAPI)
+-  Azure Container Registry
+-  Azure Database for PostgreSQL
+-  Azure Blob Storage
 - [ ] Add a Mermaid flowchart diagram to docs/architecture.md showing the high-level component flow
 
-- [ ] The diagram should look structurally like this — write it yourself in Mermaid syntax:
-- [ ] Browser → Static Web Apps → App Service → PostgreSQL
-- [ ] → Blob Storage
-- [ ] App Service ← Container Registry
+-  The diagram should look structurally like this — write it yourself in Mermaid syntax:
+-  Browser → Static Web Apps → App Service → PostgreSQL
+-  → Blob Storage
+-  App Service ← Container Registry
 
 - [ ] Commit: docs: add architecture documentation and diagram
 
 ## Docker Compose — local environment
 
-- [ ] Create docker-compose.yml at repo root with:
-- [ ] postgres:15 service — port 5432:5432, named volume for data persistence, env vars for POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB
-- [ ] pgadmin service — port 5050:80, depends on postgres
-- [ ] Run docker compose up -d
-- [ ] Open pgAdmin at http://localhost:5050, connect to the PostgreSQL instance, confirm the default database exists
+- [x] Create docker-compose.yml at repo root with:
+- [x] postgres:15 service — port 5432:5432, named volume for data persistence, env vars for POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB
+-  pgadmin service — port 5050:80, depends on postgres
+- [x] Run docker compose up -d
+- [x] Open pgAdmin at http://localhost:5050, connect to the PostgreSQL instance, confirm the default database exists
 - [ ] Commit: chore: add docker-compose for local development
 
 ## Backend scaffold
