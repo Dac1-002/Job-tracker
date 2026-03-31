@@ -43,22 +43,22 @@
 -  pgadmin service — port 5050:80, depends on postgres
 - [x] Run docker compose up -d
 - [x] Open pgAdmin at http://localhost:5050, connect to the PostgreSQL instance, confirm the default database exists
-- [ ] Commit: chore: add docker-compose for local development
+- [x] Commit: chore: add docker-compose for local development
 
 ## Backend scaffold
 
-- [ ] Inside backend/, create pyproject.toml with project name, Python version >=3.12
-- [ ] Create a Python virtual environment: python -m venv .venv
-- [ ] Install initial dependencies: fastapi, uvicorn[standard], ruff
-- [ ] Add them to pyproject.toml under [project.dependencies]
-- [ ] Create backend/.env.example with placeholder entries:
+- [x] Inside backend/, create pyproject.toml with project name, Python version >=3.12
+- [x] Create a Python virtual environment: python -m venv .venv
+- [x] Install initial dependencies: fastapi, uvicorn[standard], ruff
+- [x] Add them to pyproject.toml under [project.dependencies]
+- [x] Create backend/.env.example with placeholder entries:
 
-- [ ] DATABASE_URL=
-- [ ] RET_KEY=
-- [ ] ENVIRONMENT=development
+-  DATABASE_URL=
+-  RET_KEY=
+-  ENVIRONMENT=development
 
-- [ ] Create backend/app/__init__.py and backend/app/main.py with a single line: # TODO
-- [ ] Run ruff check . from backend/ — should pass with no errors
+- [x] Create backend/app/__init__.py and backend/app/main.py with a single line: # TODO
+- [x] Run ruff check . from backend/ — should pass with no errors
 - [ ] Commit: chore(backend): scaffold python project
 
 ## Frontend scaffold
