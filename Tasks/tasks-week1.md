@@ -59,7 +59,7 @@
 
 - [x] Create backend/app/__init__.py and backend/app/main.py with a single line: # TODO
 - [x] Run ruff check . from backend/ — should pass with no errors
-- [ ] Commit: chore(backend): scaffold python project
+- [x] Commit: chore(backend): scaffold python project
 
 ## Frontend scaffold
 
