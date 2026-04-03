@@ -63,11 +63,11 @@
 
 ## Frontend scaffold
 
-- [ ] From frontend/, run npm create vite@latest . -- --template react-ts
-- [ ] Run npm install
-- [ ] Run npm run build — confirm it succeeds
-- [ ] Run npx eslint --init and configure for TypeScript + React
-- [ ] Confirm tsconfig.json has "strict": true
-- [ ] Delete the boilerplate content in src/App.tsx — replace with <h1>Job Tracker</h1>
-- [ ] Run npm run dev — confirm it loads in the browser
-- [ ] Commit: chore(frontend): scaffold vite react typescript project
+- [x] From frontend/, run npm create vite@latest . -- --template react-ts
+- [x] Run npm install
+- [x] Run npm run build — confirm it succeeds
+- [x] Run npx eslint --init and configure for TypeScript + React
+- [x] Confirm tsconfig.json has "strict": true
+- [x] Delete the boilerplate content in src/App.tsx — replace with <h1>Job Tracker</h1>
+- [x] Run npm run dev — confirm it loads in the browser
+- [x] Commit: chore(frontend): scaffold vite react typescript project
