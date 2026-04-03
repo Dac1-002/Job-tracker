@@ -20,21 +20,21 @@
 ## Architecture documentation
 
 - [x] Create docs/architecture.md
-- [ ] Write in plain English (no diagrams yet): what each component is, what it does, how they connect
+- [x] Write in plain English (no diagrams yet): what each component is, what it does, how they connect
 -  Browser / React SPA
 -  Azure Static Web Apps
 -  Azure App Service (FastAPI)
 -  Azure Container Registry
 -  Azure Database for PostgreSQL
 -  Azure Blob Storage
-- [ ] Add a Mermaid flowchart diagram to docs/architecture.md showing the high-level component flow
+- [x] Add a Mermaid flowchart diagram to docs/architecture.md showing the high-level component flow
 
 -  The diagram should look structurally like this — write it yourself in Mermaid syntax:
 -  Browser → Static Web Apps → App Service → PostgreSQL
 -  → Blob Storage
 -  App Service ← Container Registry
 
-- [ ] Commit: docs: add architecture documentation and diagram
+- [x] Commit: docs: add architecture documentation and diagram
 
 ## Docker Compose — local environment
 
