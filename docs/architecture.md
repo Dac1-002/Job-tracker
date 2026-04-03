@@ -119,8 +119,4 @@ flowchart LR
     App --> Blob
     Registry --> App
 
-    - **App Service → Blob Storage**  
-  Backend handles files
-
-- **Container Registry → App Service**  
-  Backend comes from Docker image
+    
