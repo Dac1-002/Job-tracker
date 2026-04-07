@@ -2,13 +2,13 @@
 
 ## ER Diagram
 
-- [ ] On paper (or any whiteboard tool), draw all entities and their relationships before opening a code editor
-  - [ ] Identify every table
-  - [ ] Identify every foreign key relationship
-  - [ ] Mark which relationships are one-to-many
-- [ ] Create docs/db-schema.md
-- [ ] Write a plain English description of every table: what it represents, why it exists
-- [ ] Add a Mermaid ER diagram to docs/db-schema.md covering all 7 tables with their columns and relationships
+- [x] On paper (or any whiteboard tool), draw all entities and their relationships before opening a code editor
+  -  Identify every table
+  -  Identify every foreign key relationship
+  -  Mark which relationships are one-to-many
+- [x] Create docs/db-schema.md
+- [x] Write a plain English description of every table: what it represents, why it exists
+- [x] Add a Mermaid ER diagram to docs/db-schema.md covering all 7 tables with their columns and relationships
 
 Your Mermaid ER diagram should use erDiagram syntax. Example structure (you write the full version):
 
@@ -19,7 +19,7 @@ erDiagram
     applications }o--|| companies : "applies to"
     applications ||--o{ status_history : "has"
 
-- [ ] Commit: docs: add database schema documentation and ER diagram
+- [x] Commit: docs: add database schema documentation and ER diagram
 
 ---
 

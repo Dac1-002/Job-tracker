@@ -4,25 +4,25 @@ This document describes the database structure for our project. It explains each
 
 ## Tables
 
-### 1. users
-- **Purpose: Stores** information about the users of the system.
-- **Why it exists:** We need to know who is submitting applications, writing comments, etc.
+### 1. user
+- **Purpose:** Stores information about the users of the system.
+- **Why it exists:** We need to know who is submitting applications, adding contacts, uploading documents, or setting reminders.
 - **Columns:**
   - `id` (PK): Unique identifier for each user
   - `name`: Full name of the user
   - `email`: User’s email address
 
-### 2. companies
+### 2. company
 - **Purpose:** Stores information about companies.
-- **Why it exists:** Users apply to these companies and jobs belong to them.
+- **Why it exists:** Users apply to these companies, and applications reference them.
 - **Columns:**
   - `id` (PK): Unique identifier for each company
   - `name`: Company name
   - `industry`: Type of industry
 
-### 3. applications
+### 3. application
 - **Purpose:** Tracks job applications submitted by users.
-- **Why it exists:** Connects users to companies they applied to.
+- **Why it exists:** Connects users to companies they applied to and serves as the central point for related contacts, documents, reminders, and status history.
 - **Columns:**
   - `id` (PK): Unique identifier for each application
   - `user_id` (FK): References the user who submitted the application
@@ -38,26 +38,17 @@ This document describes the database structure for our project. It explains each
   - `status`: Status description
   - `updated_on`: Date when the status was updated
 
-### 5. jobs
-- **Purpose:** Stores job openings for companies.
-- **Why it exists:** Allows users to see and apply to jobs.
+### 5. contact
+- **Purpose:** Stores contact information related to a specific application (e.g., recruiter or company representative).
+- **Why it exists:** Each application may involve a contact person for communication or follow-ups.
 - **Columns:**
-  - `id` (PK): Unique identifier for each job
-  - `title`: Job title
-  - `company_id` (FK): References the company offering the job
-  - `description`: Job description
+  - `id` (PK): Unique identifier for each contact
+  - `application_id` (FK): References the application this contact belongs to
+  - `name`: Name of the contact person
+  - `email`: Email address of the contact
+  - `phone`: Phone number of the contact
 
-### 6. comments
-- **Purpose:** Stores user comments on applications.
-- **Why it exists:** Enables discussion or notes related to an application.
-- **Columns:**
-  - `id` (PK): Unique identifier for each comment
-  - `application_id` (FK): References the application the comment belongs to
-  - `user_id` (FK): References the user who wrote the comment
-  - `content`: The comment text
-  - `created_on`: Date of creation
-
-### 7. documents
+### 6. document
 - **Purpose:** Stores documents attached to applications (e.g., resume, cover letter).
 - **Why it exists:** Keeps track of all files submitted with applications.
 - **Columns:**
@@ -66,21 +57,30 @@ This document describes the database structure for our project. It explains each
   - `filename`: Name of the file
   - `url`: Location where the file is stored
 
+### 7. reminder
+- **Purpose:** Stores reminders or notifications related to applications.
+- **Why it exists:** Helps users track important dates, such as follow-ups or interviews.
+- **Columns:**
+  - `id` (PK): Unique identifier for each reminder
+  - `application_id` (FK): References the application this reminder is for
+  - `message`: Reminder message
+  - `remind_on`: Date when the reminder should trigger
+
 ## ER Diagram
 
 ```mermaid
 erDiagram
-    users {
+    user {
         int id PK
         string name
         string email
     }
-    companies {
+    company {
         int id PK
         string name
         string industry
     }
-    applications {
+    application {
         int id PK
         int user_id FK
         int company_id FK
@@ -92,30 +92,29 @@ erDiagram
         string status
         date updated_on
     }
-    jobs {
-        int id PK
-        string title
-        int company_id FK
-        string description
-    }
-    comments {
+    contact {
         int id PK
         int application_id FK
-        int user_id FK
-        string content
-        date created_on
+        string name
+        string email
+        string phone
     }
-    documents {
+    document {
         int id PK
         int application_id FK
         string filename
         string url
     }
+    reminder {
+        int id PK
+        int application_id FK
+        string message
+        date remind_on
+    }
 
-    users ||--o{ applications : "owns"
-    applications ||--|| companies : "applies to"
-    applications ||--o{ status_history : "has"
-    companies ||--o{ jobs : "offers"
-    users ||--o{ comments : "writes"
-    applications ||--o{ comments : "has"
-    applications ||--o{ documents : "includes"
+    user ||--o{ application : "owns"
+    application ||--|| company : "applies to"
+    application ||--o{ status_history : "has"
+    application ||--o{ contact : "has"
+    application ||--o{ document : "includes"
+    application ||--o{ reminder : "has"
