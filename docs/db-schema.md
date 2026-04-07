@@ -110,10 +110,10 @@ erDiagram
         int application_id FK
         string filename
         string url
-    }}
+    }
 
     users ||--o{ applications : "owns"
-    applications }o--|| companies : "applies to"
+    applications ||--|| companies : "applies to"
     applications ||--o{ status_history : "has"
     companies ||--o{ jobs : "offers"
     users ||--o{ comments : "writes"
