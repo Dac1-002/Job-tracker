@@ -25,20 +25,20 @@ erDiagram
 
 ## SQLAlchemy models
 
-- [ ] Install dependencies: sqlalchemy[asyncio], asyncpg, alembic
-- [ ] Create backend/app/db/base.py — declarative base class
-- [ ] Create backend/app/db/session.py — async engine + session factory reading DATABASE_URL from env
-- [ ] Create model files for all 7 tables:
-  - [ ] backend/app/db/models/user.py
-  - [ ] backend/app/db/models/company.py
-  - [ ] backend/app/db/models/application.py
-  - [ ] backend/app/db/models/status_history.py
-  - [ ] backend/app/db/models/contact.py
-  - [ ] backend/app/db/models/document.py
-  - [ ] backend/app/db/models/reminder.py
-- [ ] Each model must include: correct column types, foreign keys, indexes as per schema spec in PROJECT_PLAN.md, created_at with server_default=func.now()
-- [ ] Define the ApplicationStatus enum in Python (used in both the model and Pydantic schemas later)
-- [ ] Commit: feat(db): add sqlalchemy models for all entities
+- [x] Install dependencies: sqlalchemy[asyncio], asyncpg, alembic
+- [x] Create backend/app/db/base.py — declarative base class
+- [x] Create backend/app/db/session.py — async engine + session factory reading DATABASE_URL from env
+- [x] Create model files for all 7 tables:
+  -  backend/app/db/models/user.py
+  -  bckend/app/db/models/company.py
+  -  backend/app/db/models/application.py
+  -  backend/app/db/models/status_history.py
+  -  backend/app/db/models/contact.py
+  -  backend/app/db/models/document.py
+  -  backend/app/db/models/reminder.py
+- [x] Each model must include: correct column types, foreign keys, indexes as per schema spec in PROJECT_PLAN.md, created_at with server_default=func.now()
+- [x] Define the ApplicationStatus enum in Python (used in both the model and Pydantic schemas later)
+- [x] Commit: feat(db): add sqlalchemy models for all entities
 
 ---
 
