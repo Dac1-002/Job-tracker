@@ -10,34 +10,28 @@ from sqlalchemy.ext.asyncio import create_async_engine
 
 from app.db.base import Base
 
-# IMPORTANT: force model imports so SQLAlchemy registers metadata
-import app.db.models.user
-import app.db.models.company
-import app.db.models.application
-import app.db.models.status_history
-import app.db.models.contact
-import app.db.models.document
-import app.db.models.reminder
-
-
-# Load .env
-load_dotenv()
+# IMPORTANT: load .env reliably (fixes path issues)
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "..", ".env"))
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-# Alembic config
+# Debug (you can remove later)
+print("DATABASE_URL =", DATABASE_URL)
+
 config = context.config
 config.set_main_option("sqlalchemy.url", DATABASE_URL)
 
-# Logging
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-# Target metadata for autogenerate
+# IMPORTANT: this is what Alembic uses for autogenerate
 target_metadata = Base.metadata
 
 
-def run_migrations_offline() -> None:
+# -------------------------
+# OFFLINE MODE
+# -------------------------
+def run_migrations_offline():
     url = config.get_main_option("sqlalchemy.url")
 
     context.configure(
@@ -51,10 +45,14 @@ def run_migrations_offline() -> None:
         context.run_migrations()
 
 
+# -------------------------
+# ONLINE MODE (ASYNC)
+# -------------------------
 def do_run_migrations(connection):
     context.configure(
         connection=connection,
         target_metadata=target_metadata,
+        compare_type=True,
     )
 
     with context.begin_transaction():
@@ -74,6 +72,9 @@ def run_migrations_online():
     asyncio.run(run())
 
 
+# -------------------------
+# ENTRY POINT
+# -------------------------
 if context.is_offline_mode():
     run_migrations_offline()
 else:
