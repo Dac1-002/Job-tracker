@@ -62,24 +62,24 @@ DATABASE_URL=postgresql+asyncpg://postgres:postgres@localhost:5432/jobtracker
 
 ## Seed script
 
-- [ ] Create backend/app/db/seed.py
+- [x] Create backend/app/db/seed.py
 - [ ] Script should create:
-  - [ ] 1 user (email + hashed placeholder password)
-  - [ ] 3 companies
-  - [ ] 5 applications across those companies with varying statuses
-  - [ ] At least 2 status_history entries per application
-  - [ ] 2 contacts
-  - [ ] 2 reminders
-- [ ] Run the seed script, verify data in pgAdmin
-- [ ] Commit: chore(db): add seed script for local development
+  -  1 user (email + hashed placeholder password)
+  -  3 companies
+  -  5 applications across those companies with varying statuses
+  -  At least 2 status_history entries per application
+  -  2 contacts
+  -  2 reminders
+- [x] Run the seed script, verify data in pgAdmin
+- [x] Commit: chore(db): add seed script for local development
 
 ---
 
 ## What I expect by the end of this week:
 
-- [ ] docs/db-schema.md contains a rendered Mermaid ER diagram with all 7 tables
-- [ ] All 7 SQLAlchemy models are written and match the schema spec
-- [ ] alembic upgrade head runs against the local Docker PostgreSQL with zero errors
-- [ ] All 7 tables are visible in pgAdmin with correct columns
-- [ ] Seed script populates the database without errors
-- [ ] You can explain why status_history is a separate table and what would be lost without it
+- [x] docs/db-schema.md contains a rendered Mermaid ER diagram with all 7 tables
+- [x] All 7 SQLAlchemy models are written and match the schema spec
+- [x] alembic upgrade head runs against the local Docker PostgreSQL with zero errors
+- [x] All 7 tables are visible in pgAdmin with correct columns
+- [x] Seed script populates the database without errors
+- [x] You can explain why status_history is a separate table and what would be lost without it
