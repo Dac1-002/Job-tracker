@@ -44,19 +44,19 @@ erDiagram
 
 ## Alembic setup + first migration
 
-- [ ] Run alembic init alembic inside backend/
-- [ ] Edit alembic/env.py:
-  - [ ] Import all models so Alembic can detect them
-  - [ ] Read DATABASE_URL from environment (use python-dotenv to load .env locally)
-  - [ ] Configure async engine usage
-- [ ] Create .env in backend/ (do not commit — it's in .gitignore):
+- [x] Run alembic init alembic inside backend/
+- [x] Edit alembic/env.py:
+  -  Import all models so Alembic can detect them
+  -  Read DATABASE_URL from environment (use python-dotenv to load .env locally)
+  -  Configure async engine usage
+- [x] Create .env in backend/ (do not commit — it's in .gitignore):
 DATABASE_URL=postgresql+asyncpg://postgres:postgres@localhost:5432/jobtracker
 
-- [ ] Run alembic revision --autogenerate -m "create_initial_tables"
-- [ ] Review the generated migration file — confirm all tables, columns, foreign keys, and indexes are present
-- [ ] Run alembic upgrade head
-- [ ] Open pgAdmin and verify all 7 tables exist with the correct columns
-- [ ] Commit: feat(db): add alembic config and initial migration
+- [x] Run alembic revision --autogenerate -m "create_initial_tables"
+- [x] Review the generated migration file — confirm all tables, columns, foreign keys, and indexes are present
+- [x] Run alembic upgrade head
+- [x] Open pgAdmin and verify all 7 tables exist with the correct columns
+- [x] Commit: feat(db): add alembic config and initial migration
 
 ---
 

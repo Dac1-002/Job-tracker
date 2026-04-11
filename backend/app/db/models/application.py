@@ -1,8 +1,10 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Enum as SQLAlchemyEnum
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-from ..base import Base
-from ..enums import ApplicationStatus
+
+from app.db.base import Base
+from app.db.enums import ApplicationStatus
+
 
 class Application(Base):
     __tablename__ = "applications"

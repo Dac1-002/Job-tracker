@@ -1,7 +1,9 @@
 from sqlalchemy import Column, Integer, ForeignKey, DateTime, String
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-from ..base import Base
+
+from app.db.base import Base
+
 
 class StatusHistory(Base):
     __tablename__ = "status_history"
