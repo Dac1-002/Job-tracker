@@ -67,23 +67,23 @@ python
 
 ## CORS configuration
 
-- [ ] Add fastapi.middleware.cors.CORSMiddleware to main.py  
-- [ ] Allow origins: http://localhost:5173 (Vite dev server) for development  
-- [ ] Read the allowed origin from settings — not hardcoded  
-- [ ] Commit: feat(backend): add cors middleware
+- [x] Add fastapi.middleware.cors.CORSMiddleware to main.py  
+- [x] Allow origins: http://localhost:5173 (Vite dev server) for development  
+- [x] Read the allowed origin from settings — not hardcoded  
+- [x] Commit: feat(backend): add cors middleware
 
 ## First pytest test
 
-- [ ] Install pytest, pytest-asyncio, httpx  
-- [ ] Create backend/tests/conftest.py with an AsyncClient fixture pointing at the FastAPI app  
-- [ ] Create backend/tests/test_health.py:
-  - [ ] Test: GET /api/v1/health returns 200 and {"status": "ok"}  
-- [ ] Run pytest — confirm it passes  
-- [ ] Commit: test(backend): add health endpoint test
+- [x] Install pytest, pytest-asyncio, httpx  
+- [x] Create backend/tests/conftest.py with an AsyncClient fixture pointing at the FastAPI app  
+- [x] Create backend/tests/test_health.py:
+  -  Test: GET /api/v1/health returns 200 and {"status": "ok"}  
+- [x] Run pytest — confirm it passes  
+- [x] Commit: test(backend): add health endpoint test
 
 ## Ruff configuration
 
-- [ ] Add [tool.ruff] section to pyproject.toml:
+- [x] Add [tool.ruff] section to pyproject.toml:
 
 toml
 
@@ -94,15 +94,15 @@ toml
   [tool.ruff.lint]
   select = ["E", "F", "I", "UP"]
 
-- [ ] Run ruff check . from backend/ — fix any issues  
-- [ ] Run ruff format . — auto-format all files  
-- [ ] Commit: chore(backend): configure ruff and apply formatting
+- [x] Run ruff check . from backend/ — fix any issues  
+- [x] Run ruff format . — auto-format all files  
+- [x] Commit: chore(backend): configure ruff and apply formatting
 
 ## Week 3 — Definition of Done
 
-- [ ] GET /api/v1/health returns 200 with DB running, 503 with DB stopped  
-- [ ] Swagger UI is accessible at /docs  
-- [ ] Layer structure exists as packages (even if mostly empty)  
-- [ ] Custom exceptions are defined and registered  
-- [ ] At least one pytest test passes  
-- [ ] ruff check . passes with zero errors
+- [x] GET /api/v1/health returns 200 with DB running, 503 with DB stopped  
+- [x] Swagger UI is accessible at /docs  
+- [x] Layer structure exists as packages (even if mostly empty)  
+- [x] Custom exceptions are defined and registered  
+- [x] At least one pytest test passes  
+- [x] ruff check . passes with zero errors

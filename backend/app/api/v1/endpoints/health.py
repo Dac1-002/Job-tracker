@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import text
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.dependencies import get_db
 
@@ -14,7 +14,4 @@ async def health(db: AsyncSession = Depends(get_db)):
         return {"status": "ok"}
 
     except Exception:
-        raise HTTPException(
-            status_code=503,
-            detail="database unreachable"
-        )
+        raise HTTPException(status_code=503, detail="database unreachable")
