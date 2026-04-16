@@ -1,4 +1,5 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Enum as SQLAlchemyEnum
+from sqlalchemy import Column, DateTime, ForeignKey, Integer, String
+from sqlalchemy import Enum as SQLAlchemyEnum
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 
@@ -13,8 +14,14 @@ class Application(Base):
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False, index=True)
     company_id = Column(Integer, ForeignKey("companies.id"), nullable=False, index=True)
     position = Column(String, nullable=True)
-    status = Column(SQLAlchemyEnum(ApplicationStatus), nullable=False, default=ApplicationStatus.APPLIED)
-    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    status = Column(
+        SQLAlchemyEnum(ApplicationStatus),
+        nullable=False,
+        default=ApplicationStatus.APPLIED,
+    )
+    created_at = Column(
+        DateTime(timezone=True), server_default=func.now(), nullable=False
+    )
 
     # Relationships
     user = relationship("User", back_populates="applications")

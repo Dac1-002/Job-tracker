@@ -1,6 +1,7 @@
-from enum import Enum
+from enum import StrEnum
 
-class ApplicationStatus(str, Enum):
+
+class ApplicationStatus(StrEnum):
     APPLIED = "applied"
     INTERVIEWING = "interviewing"
     OFFERED = "offered"

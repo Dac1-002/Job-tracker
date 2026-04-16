@@ -83,7 +83,7 @@ python
 
 ## Ruff configuration
 
-- [ ] Add [tool.ruff] section to pyproject.toml:
+- [x] Add [tool.ruff] section to pyproject.toml:
 
 toml
 
@@ -94,15 +94,15 @@ toml
   [tool.ruff.lint]
   select = ["E", "F", "I", "UP"]
 
-- [ ] Run ruff check . from backend/ — fix any issues  
-- [ ] Run ruff format . — auto-format all files  
-- [ ] Commit: chore(backend): configure ruff and apply formatting
+- [x] Run ruff check . from backend/ — fix any issues  
+- [x] Run ruff format . — auto-format all files  
+- [x] Commit: chore(backend): configure ruff and apply formatting
 
 ## Week 3 — Definition of Done
 
-- [ ] GET /api/v1/health returns 200 with DB running, 503 with DB stopped  
-- [ ] Swagger UI is accessible at /docs  
-- [ ] Layer structure exists as packages (even if mostly empty)  
-- [ ] Custom exceptions are defined and registered  
-- [ ] At least one pytest test passes  
-- [ ] ruff check . passes with zero errors
+- [x] GET /api/v1/health returns 200 with DB running, 503 with DB stopped  
+- [x] Swagger UI is accessible at /docs  
+- [x] Layer structure exists as packages (even if mostly empty)  
+- [x] Custom exceptions are defined and registered  
+- [x] At least one pytest test passes  
+- [x] ruff check . passes with zero errors
