@@ -67,10 +67,10 @@ python
 
 ## CORS configuration
 
-- [ ] Add fastapi.middleware.cors.CORSMiddleware to main.py  
-- [ ] Allow origins: http://localhost:5173 (Vite dev server) for development  
-- [ ] Read the allowed origin from settings — not hardcoded  
-- [ ] Commit: feat(backend): add cors middleware
+- [x] Add fastapi.middleware.cors.CORSMiddleware to main.py  
+- [x] Allow origins: http://localhost:5173 (Vite dev server) for development  
+- [x] Read the allowed origin from settings — not hardcoded  
+- [x] Commit: feat(backend): add cors middleware
 
 ## First pytest test
 
