@@ -74,12 +74,12 @@ python
 
 ## First pytest test
 
-- [ ] Install pytest, pytest-asyncio, httpx  
-- [ ] Create backend/tests/conftest.py with an AsyncClient fixture pointing at the FastAPI app  
-- [ ] Create backend/tests/test_health.py:
-  - [ ] Test: GET /api/v1/health returns 200 and {"status": "ok"}  
-- [ ] Run pytest — confirm it passes  
-- [ ] Commit: test(backend): add health endpoint test
+- [x] Install pytest, pytest-asyncio, httpx  
+- [x] Create backend/tests/conftest.py with an AsyncClient fixture pointing at the FastAPI app  
+- [x] Create backend/tests/test_health.py:
+  -  Test: GET /api/v1/health returns 200 and {"status": "ok"}  
+- [x] Run pytest — confirm it passes  
+- [x] Commit: test(backend): add health endpoint test
 
 ## Ruff configuration
 
