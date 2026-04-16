@@ -53,7 +53,7 @@ Python
 
 ## Custom exceptions
 
-- [ ] Create backend/app/core/exceptions.py:
+- [x] Create backend/app/core/exceptions.py:
 
 python
 
@@ -62,8 +62,8 @@ python
   class ConflictError(Exception): ...
   class ValidationError(Exception): ...
 
-- [ ] Register global exception handlers in main.py that convert each to the appropriate HTTP response  
-- [ ] Commit: feat(backend): add custom exceptions and global handlers
+- [x] Register global exception handlers in main.py that convert each to the appropriate HTTP response  
+- [x] Commit: feat(backend): add custom exceptions and global handlers
 
 ## CORS configuration
 
