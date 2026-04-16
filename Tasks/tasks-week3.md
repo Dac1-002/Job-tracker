@@ -22,21 +22,21 @@ Python
 
 ## Database session dependency
 
-- [ ] Create backend/app/core/dependencies.py  
-- [ ] Add get_db async generator dependency that yields a SQLAlchemy AsyncSession and closes it after the request  
-- [ ] Commit: feat(backend): add database session dependency
+- [x] Create backend/app/core/dependencies.py  
+- [x] Add get_db async generator dependency that yields a SQLAlchemy AsyncSession and closes it after the request  
+- [x] Commit: feat(backend): add database session dependency
 
 ## Layer structure
 
-- [ ] Create empty __init__.py files to establish the package structure:
-  - [ ] backend/app/api/__init__.py  
-  - [ ] backend/app/api/v1/__init__.py  
-  - [ ] backend/app/api/v1/endpoints/__init__.py  
-  - [ ] backend/app/repositories/__init__.py  
-  - [ ] backend/app/schemas/__init__.py  
-  - [ ] backend/app/services/__init__.py  
-- [ ] Create backend/app/api/v1/router.py — empty APIRouter for now  
-- [ ] Commit: chore(backend): establish layer package structure
+- [x] Create empty __init__.py files to establish the package structure:
+  -  backend/app/api/__init__.py  
+  -  backend/app/api/v1/__init__.py  
+  -  backend/app/api/v1/endpoints/__init__.py  
+  -  backend/app/repositories/__init__.py  
+  -  backend/app/schemas/__init__.py  
+  -  backend/app/services/__init__.py  
+- [x] Create backend/app/api/v1/router.py — empty APIRouter for now  
+- [x] Commit: chore(backend): establish layer package structure
 
 ## Health endpoint
 
