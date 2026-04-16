@@ -40,16 +40,16 @@ Python
 
 ## Health endpoint
 
-- [ ] Create backend/app/api/v1/endpoints/health.py  
-- [ ] Implement GET /api/v1/health:
-  - [ ] Returns {"status": "ok"} when DB is reachable  
-  - [ ] Returns {"status": "degraded", "detail": "database unreachable"} with HTTP 503 if DB connection fails  
-- [ ] Test the degraded case by stopping the Docker PostgreSQL container temporarily  
-- [ ] Register the router in main.py with prefix /api/v1  
-- [ ] Start the server: uvicorn app.main:app --reload  
-- [ ] Confirm GET http://localhost:8000/api/v1/health returns 200  
-- [ ] Confirm GET http://localhost:8000/docs shows the Swagger UI  
-- [ ] Commit: feat(backend): add health check endpoint
+- [x] Create backend/app/api/v1/endpoints/health.py  
+- [x] Implement GET /api/v1/health:
+  -  Returns {"status": "ok"} when DB is reachable  
+  -  Returns {"status": "degraded", "detail": "database unreachable"} with HTTP 503 if DB connection fails  
+  -  Test the degraded case by stopping the Docker PostgreSQL container temporarily  
+- [x] Register the router in main.py with prefix /api/v1  
+- [x] Start the server: uvicorn app.main:app --reload  
+- [x] Confirm GET http://localhost:8000/api/v1/health returns 200  
+- [x] Confirm GET http://localhost:8000/docs shows the Swagger UI  
+- [x] Commit: feat(backend): add health check endpoint
 
 ## Custom exceptions
 
