@@ -2,23 +2,23 @@
 
 ## Dependencies
 
-- [ ] Install production dependencies:
+- [x] Install production dependencies:
 
   npm install axios react-router-dom @tanstack/react-query zustand react-hook-form zod @hookform/resolvers recharts
 
-- [ ] Install dev dependencies:
+- [x] Install dev dependencies:
 
   npm install -D @types/react-router-dom vitest @testing-library/react @testing-library/jest-dom
 
-- [ ] Confirm npm run build still succeeds
-- [ ] Commit: chore(frontend): install dependencies
+- [x] Confirm npm run build still succeeds
+- [x] Commit: chore(frontend): install dependencies
 
 ---
 
 ## TypeScript types
 
-- [ ] Create src/types/index.ts
-- [ ] Define TypeScript interfaces for all API entities matching the DB schema:
+- [x] Create src/types/index.ts
+- [x] Define TypeScript interfaces for all API entities matching the DB schema:
 
   typescript:
 
@@ -28,7 +28,7 @@
   export interface Application { id: string; company_id: string; role_title: string; current_status: ApplicationStatus; ... }
   // ... all entities
 
-- [ ] Commit: feat(frontend): add entity type definitions
+- [x] Commit: feat(frontend): add entity type definitions
 
 ---
 
