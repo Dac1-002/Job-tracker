@@ -1,5 +1,5 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import App from "./App";
+import AppShell from "./components/layout/AppShell";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 // Pages
@@ -13,74 +13,52 @@ import CompanyDetail from "./pages/CompanyDetail";
 import Reminders from "./pages/Reminders";
 
 export const router = createBrowserRouter([
+  // PUBLIC ROUTES (no layout)
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+
+  // PROTECTED APP (with layout)
   {
     path: "/",
-    element: <App />,
+    element: (
+      <ProtectedRoute>
+        <AppShell />
+      </ProtectedRoute>
+    ),
     children: [
-      // redirect /
       {
         index: true,
         element: <Navigate to="/dashboard" replace />,
       },
-
-      // public routes
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "register",
-        element: <Register />,
-      },
-
-      // protected routes
       {
         path: "dashboard",
-        element: (
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        ),
+        element: <Dashboard />,
       },
       {
         path: "applications",
-        element: (
-          <ProtectedRoute>
-            <Applications />
-          </ProtectedRoute>
-        ),
+        element: <Applications />,
       },
       {
         path: "applications/:id",
-        element: (
-          <ProtectedRoute>
-            <ApplicationDetail />
-          </ProtectedRoute>
-        ),
+        element: <ApplicationDetail />,
       },
       {
         path: "companies",
-        element: (
-          <ProtectedRoute>
-            <Companies />
-          </ProtectedRoute>
-        ),
+        element: <Companies />,
       },
       {
         path: "companies/:id",
-        element: (
-          <ProtectedRoute>
-            <CompanyDetail />
-          </ProtectedRoute>
-        ),
+        element: <CompanyDetail />,
       },
       {
         path: "reminders",
-        element: (
-          <ProtectedRoute>
-            <Reminders />
-          </ProtectedRoute>
-        ),
+        element: <Reminders />,
       },
     ],
   },
