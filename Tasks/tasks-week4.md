@@ -34,26 +34,26 @@
 
 ## API client
 
-- [ ] Create src/api/client.ts:
+- [x] Create src/api/client.ts:
     - Axios instance with baseURL read from import.meta.env.VITE_API_URL
     - Request interceptor: attach Authorization: Bearer <token> header if token exists in store (store is not built yet — leave a // TODO comment)
     - Response interceptor: log errors for now (401 handling comes in Month 3)
 
-- [ ] Create src/api/auth.ts — stub functions only: login, register, logout, refresh (return Promise<void> for now)
+- [x] Create src/api/auth.ts — stub functions only: login, register, logout, refresh (return Promise<void> for now)
 
-- [ ] Create src/api/applications.ts — stub: getApplications, getApplication, createApplication, updateApplication, deleteApplication
+- [x] Create src/api/applications.ts — stub: getApplications, getApplication, createApplication, updateApplication, deleteApplication
 
-- [ ] Create .env.development in frontend/:
+- [x] Create .env.development in frontend/:
 
 VITE_API_URL=http://localhost:8000
 
-- [ ] Commit: feat(frontend): add axios client and api stubs
+- [x] Commit: feat(frontend): add axios client and api stubs
 
 ---
 
 ## Zustand auth store
 
-- [ ] Create src/store/auth.ts:
+- [x] Create src/store/auth.ts:
 
   typescript
 
@@ -64,25 +64,25 @@ VITE_API_URL=http://localhost:8000
     clearAuth: () => void
   }
 
-- [ ] Wire the Axios request interceptor to read accessToken from the store
-- [ ] Commit: feat(frontend): add zustand auth store
+- [x] Wire the Axios request interceptor to read accessToken from the store
+- [x] Commit: feat(frontend): add zustand auth store
 
 ---
 
 ## React Query setup
 
-- [ ] Wrap the app in QueryClientProvider in src/main.tsx
-- [ ] Configure QueryClient with sensible defaults:
+- [x] Wrap the app in QueryClientProvider in src/main.tsx
+- [x] Configure QueryClient with sensible defaults:
     - staleTime: 1000 * 60 (1 minute)
     - retry: 1
-- [ ] Commit: feat(frontend): configure react query provider
+- [x] Commit: feat(frontend): configure react query provider
 
 ---
 
 ## Routing
 
-- [ ] Create src/router.tsx with createBrowserRouter
-- [ ] Define all routes from the spec (placeholder components for now):
+- [x] Create src/router.tsx with createBrowserRouter
+- [x] Define all routes from the spec (placeholder components for now):
 
   /           → redirect to /dashboard
   /login      → <Login />
@@ -94,49 +94,49 @@ VITE_API_URL=http://localhost:8000
   /companies/:id → <CompanyDetail />  (protected)
   /reminders  → <Reminders />  (protected)
 
-- [ ] Create stub page components in src/pages/ — each just renders an <h1> with the page name
-- [ ] Create src/components/ProtectedRoute.tsx — reads accessToken from store, redirects to /login if null (using useNavigate)
-- [ ] Wrap all protected routes in <ProtectedRoute />
-- [ ] Commit: feat(frontend): add routing structure and protected route
+- [x] Create stub page components in src/pages/ — each just renders an <h1> with the page name
+- [x] Create src/components/ProtectedRoute.tsx — reads accessToken from store, redirects to /login if null (using useNavigate)
+- [x] Wrap all protected routes in <ProtectedRoute />
+- [x] Commit: feat(frontend): add routing structure and protected route
 
 ---
 
 ## Layout components
 
-- [ ] Create src/components/layout/AppShell.tsx — outer wrapper with <Outlet />
-- [ ] Create src/components/layout/Navbar.tsx — app title + logout button placeholder
-- [ ] Create src/components/layout/Sidebar.tsx — links to all protected routes
-- [ ] Wire layout into the router as a parent route wrapping all protected routes
-- [ ] Commit: feat(frontend): add layout components
+- [x] Create src/components/layout/AppShell.tsx — outer wrapper with <Outlet />
+- [x] Create src/components/layout/Navbar.tsx — app title + logout button placeholder
+- [x] Create src/components/layout/Sidebar.tsx — links to all protected routes
+- [x] Wire layout into the router as a parent route wrapping all protected routes
+- [x] Commit: feat(frontend): add layout components
 
 ---
 
 ## Hook stubs
 
-- [ ] Create src/hooks/useApplications.ts — useQuery calling getApplications, returns typed result
-- [ ] Create src/hooks/useAuth.ts — reads from Zustand store, exposes user, isAuthenticated
-- [ ] These are stubs — they won't fetch real data yet (backend auth isn't built)
-- [ ] Commit: feat(frontend): add react query hook stubs
+- [x] Create src/hooks/useApplications.ts — useQuery calling getApplications, returns typed result
+- [x] Create src/hooks/useAuth.ts — reads from Zustand store, exposes user, isAuthenticated
+- [x] These are stubs — they won't fetch real data yet (backend auth isn't built)
+- [x] Commit: feat(frontend): add react query hook stubs
 
 ---
 
 ## Quality check
 
-- [ ] Run tsc --noEmit — zero TypeScript errors
-- [ ] Run npx eslint src/ — zero errors
-- [ ] Run npm run dev — app loads, navigation between stub pages works
-- [ ] Navigating to a protected route without a token redirects to /login
-- [ ] Commit: chore(frontend): eslint and typescript clean
+- [x] Run tsc --noEmit — zero TypeScript errors
+- [x] Run npx eslint src/ — zero errors
+- [x] Run npm run dev — app loads, navigation between stub pages works
+- [x] Navigating to a protected route without a token redirects to /login
+- [x] Commit: chore(frontend): eslint and typescript clean
 
 ---
 
 ## Week 4 — Definition of Done
 
-- [ ] All routes are defined and navigable in the browser
-- [ ] Protected routes redirect to /login when no token is in the store
-- [ ] Layout renders with Navbar and Sidebar on all protected pages
-- [ ] TypeScript compiler passes with zero errors
-- [ ] ESLint passes with zero warnings
-- [ ] React Query provider is configured
-- [ ] Axios client is set up with interceptor stubs
-- [ ] Zustand auth store exists with correct shape
+- [x] All routes are defined and navigable in the browser
+- [x] Protected routes redirect to /login when no token is in the store
+- [x] Layout renders with Navbar and Sidebar on all protected pages
+- [x] TypeScript compiler passes with zero errors
+- [x] ESLint passes with zero warnings
+- [x] React Query provider is configured
+- [x] Axios client is set up with interceptor stubs
+- [x] Zustand auth store exists with correct shape
