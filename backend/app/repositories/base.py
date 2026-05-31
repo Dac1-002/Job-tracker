@@ -1,45 +1,35 @@
-from typing import Generic, TypeVar, Type, Optional
 from uuid import UUID
 
-from sqlalchemy import select, func
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-ModelType = TypeVar("ModelType")
 
-
-class BaseRepository(Generic[ModelType]):
-    def __init__(self, model: Type[ModelType]):
+class BaseRepository[T]:
+    def __init__(self, model: type[T]):
         self.model = model
 
-    # -------------------------
-    # GET BY ID (OWNERSHIP SAFE)
-    # -------------------------
     async def get_by_id(
         self,
         db: AsyncSession,
         id: UUID,
         user_id: UUID,
-    ) -> Optional[ModelType]:
+    ) -> T | None:
 
         stmt = select(self.model).where(self.model.id == id)
 
-        # enforce ownership if model supports it
         if hasattr(self.model, "user_id"):
             stmt = stmt.where(self.model.user_id == user_id)
 
         result = await db.execute(stmt)
         return result.scalars().first()
 
-    # -------------------------
-    # LIST (OWNERSHIP SAFE)
-    # -------------------------
     async def list(
         self,
         db: AsyncSession,
         user_id: UUID,
         skip: int = 0,
         limit: int = 100,
-    ) -> tuple[list[ModelType], int]:
+    ) -> tuple[list[T], int]:
 
         stmt = select(self.model)
         count_stmt = select(func.count()).select_from(self.model)
@@ -58,14 +48,11 @@ class BaseRepository(Generic[ModelType]):
 
         return items, total
 
-    # -------------------------
-    # CREATE
-    # -------------------------
     async def create(
         self,
         db: AsyncSession,
         obj_in: dict,
-    ) -> ModelType:
+    ) -> T:
 
         obj = self.model(**obj_in)
         db.add(obj)
@@ -73,15 +60,12 @@ class BaseRepository(Generic[ModelType]):
         await db.refresh(obj)
         return obj
 
-    # -------------------------
-    # UPDATE
-    # -------------------------
     async def update(
         self,
         db: AsyncSession,
-        db_obj: ModelType,
+        db_obj: T,
         obj_in: dict,
-    ) -> ModelType:
+    ) -> T:
 
         for key, value in obj_in.items():
             setattr(db_obj, key, value)
@@ -90,13 +74,10 @@ class BaseRepository(Generic[ModelType]):
         await db.refresh(db_obj)
         return db_obj
 
-    # -------------------------
-    # DELETE
-    # -------------------------
     async def delete(
         self,
         db: AsyncSession,
-        db_obj: ModelType,
+        db_obj: T,
     ) -> None:
 
         await db.delete(db_obj)
